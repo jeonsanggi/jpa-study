@@ -57,14 +57,14 @@ public class JpaMain {
             //객체를 삭제한 상태(삭제)
             //em.remove(member);
 */
-
+/*
             //영속
             Member member1 = new Member(150l, "A");
             Member member2 = new Member(160L, "B");
 
             em.persist(member1);
             em.persist(member2);
-
+*/
             tx.commit();
         }catch (Exception e){
             tx.rollback();
