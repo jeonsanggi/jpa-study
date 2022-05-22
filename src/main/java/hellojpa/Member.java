@@ -5,7 +5,7 @@ import java.util.Date;
 
 //@Entity
 @Table(name="USER")
-public class Member {
+public class Member extends BaseEntity{
 
     @Id
     private Long id;
