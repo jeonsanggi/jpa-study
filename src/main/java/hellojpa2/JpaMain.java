@@ -1,12 +1,10 @@
-package jpabook.jpashop;
-
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
+package hellojpa2;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 
 public class JpaMain {
@@ -18,10 +16,19 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Order order = new Order();
-            order.addOrderItem(new OrderItem());
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
 
-           tx.commit();
+            Member member = new Member();
+            member.setUsername("Member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            Member findMember = em.find(Member.class, member.getId());
+            List<Member> members = findMember.getTeam().getMembers();
+
+            tx.commit();
         }catch (Exception e){
             tx.rollback();
         }finally {
