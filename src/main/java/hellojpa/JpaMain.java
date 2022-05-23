@@ -66,7 +66,7 @@ public class JpaMain {
             em.persist(member2);
 */
 
-
+/*
             //고급매핑
             Movie movie = new Movie();
             movie.setDirector("aaaa");
@@ -74,6 +74,7 @@ public class JpaMain {
             movie.setName("범지와도시2");
             movie.setPrice(10000);
 
+ */
 
             tx.commit();
         }catch (Exception e){

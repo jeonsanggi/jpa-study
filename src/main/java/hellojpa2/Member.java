@@ -1,5 +1,7 @@
 package hellojpa2;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,13 @@ public class Member {
     @ManyToOne
     @JoinColumn(name="TEAM_ID")   //연관관계 매핑
     private Team team;
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
+    @OneToMany(mappedBy = "memeber")
+    private List<MemberProduct> memberProducts = new ArrayList<>();
 
     public Long getId() {
         return id;
