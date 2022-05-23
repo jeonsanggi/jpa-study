@@ -76,6 +76,21 @@ public class JpaMain {
 
  */
 
+            //임베디드 타입
+            Member member = new Member();
+            member.setUsername("hello");
+            member.setHomeAddress(new Address("homeCity", "street", "10000"));
+
+            //컬렉션 값 타입
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("족발");
+            member.getFavoriteFoods().add("피자");
+
+            member.getAddressHistory().add(new Address("old1", "street", "10000"));
+            member.getAddressHistory().add(new Address("old2", "street", "10000"));
+
+            em.persist(member);
+
             tx.commit();
         }catch (Exception e){
             tx.rollback();
