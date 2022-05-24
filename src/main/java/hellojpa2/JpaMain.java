@@ -30,7 +30,6 @@ public class JpaMain {
             List<Member> members = findMember.getTeam().getMembers();
 
              */
-
             //페치 조인1
             Team teamA = new Team();
             teamA.setName("팀A");
