@@ -74,6 +74,9 @@ public class JpaMain {
 
 
 
+            //named 쿼리
+            List<Member> resultList = em.createNamedQuery("Member.findById", Member.class)
+                    .getResultList();
 
 
             tx.commit();

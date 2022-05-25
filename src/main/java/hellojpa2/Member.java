@@ -5,6 +5,10 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(
+        name = "Member.findById",
+        query = "select m from Member m where m.id = :id"
+)
 public class Member {
     @Id @GeneratedValue
     @Column(name="MEMBER_ID")
