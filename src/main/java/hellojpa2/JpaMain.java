@@ -78,6 +78,14 @@ public class JpaMain {
             List<Member> resultList = em.createNamedQuery("Member.findById", Member.class)
                     .getResultList();
 
+            em.flush();
+            em.clear();
+
+            // 벌크 연산 예제
+            int resultCount = em.createQuery("update Member m set m.age = 20")
+                    .executeUpdate();
+
+
 
             tx.commit();
         }catch (Exception e){

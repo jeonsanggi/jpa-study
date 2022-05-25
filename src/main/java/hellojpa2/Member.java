@@ -17,6 +17,9 @@ public class Member {
     @Column(name= "USERNAME")
     private String username;
 
+    @Column(name = "age")
+    private int age;
+
 /*    @Column(name= "TEAM_ID")
     private Long teamId;*/
 
@@ -53,5 +56,13 @@ public class Member {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
